@@ -1,3 +1,11 @@
+/*
+ * File: AuthServiceApplication.java
+ * Project: authservice
+ * Created: Tuesday, August 31st 2021, 7:37:46 am
+ * Last Modified: Thursday, September 9th 2021, 4:37:52 pm
+ * Copyright © 2021 AMDE Agência
+ */
+
 package com.raloliver.authservice;
 
 import java.util.ArrayList;
@@ -10,12 +18,19 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 
 @SpringBootApplication
 public class AuthServiceApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(AuthServiceApplication.class, args);
+	}
+
+	@Bean
+	PasswordEncoder passwordEncoder() {
+		return new BCryptPasswordEncoder();
 	}
 
 	@Bean

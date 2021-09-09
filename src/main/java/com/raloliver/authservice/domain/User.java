@@ -1,3 +1,11 @@
+/*
+ * File: User.java
+ * Project: domain
+ * Created: Tuesday, August 31st 2021, 7:39:30 am
+ * Last Modified: Thursday, September 9th 2021, 4:17:35 pm
+ * Copyright © 2021 AMDE Agência
+ */
+
 package com.raloliver.authservice.domain;
 
 import java.util.ArrayList;

@@ -1,3 +1,11 @@
+/*
+ * File: Role.java
+ * Project: domain
+ * Created: Tuesday, August 31st 2021, 7:45:46 am
+ * Last Modified: Thursday, September 9th 2021, 4:17:32 pm
+ * Copyright © 2021 AMDE Agência
+ */
+
 package com.raloliver.authservice.domain;
 
 import javax.persistence.Entity;

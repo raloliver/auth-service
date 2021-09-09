@@ -1,3 +1,11 @@
+/*
+ * File: UserResource.java
+ * Project: api
+ * Created: Tuesday, August 31st 2021, 7:52:27 pm
+ * Last Modified: Thursday, September 9th 2021, 4:17:41 pm
+ * Copyright © 2021 AMDE Agência
+ */
+
 package com.raloliver.authservice.api;
 
 import com.raloliver.authservice.service.UserService;

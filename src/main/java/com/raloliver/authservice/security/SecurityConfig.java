@@ -2,13 +2,17 @@
  * File: SecurityConfig.java
  * Project: security
  * Created: Thursday, September 9th 2021, 4:17:13 pm
- * Last Modified: Thursday, September 9th 2021, 5:11:57 pm
+ * Last Modified: Wednesday, September 22nd 2021, 7:03:35 am
  * Copyright © 2021 AMDE Agência
  */
 
 package com.raloliver.authservice.security;
 
+import com.raloliver.authservice.filter.CustomAuthenticationFilter;
+
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
@@ -36,7 +40,13 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         http.csrf().disable();
         http.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
         http.authorizeRequests().anyRequest().permitAll();
-        http.addFilter(null);
+        http.addFilter(new CustomAuthenticationFilter(authenticationManagerBean()));
+    }
+
+    @Bean
+    @Override
+    public AuthenticationManager authenticationManagerBean() throws Exception {
+        return super.authenticationManager();
     }
 
 }

@@ -2,13 +2,14 @@
  * File: SecurityConfig.java
  * Project: security
  * Created: Thursday, September 9th 2021, 4:17:13 pm
- * Last Modified: Wednesday, September 29th 2021, 5:26:28 am
+ * Last Modified: Wednesday, September 29th 2021, 6:45:28 am
  * Copyright © 2021 AMDE Agência
  */
 
 package com.raloliver.authservice.security;
 
 import com.raloliver.authservice.filter.CustomAuthenticationFilter;
+import com.raloliver.authservice.filter.CustomAuthorizationFilter;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -21,6 +22,7 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
 import lombok.RequiredArgsConstructor;
 
@@ -55,6 +57,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         // http.authorizeRequests().anyRequest().permitAll();
         http.authorizeRequests().anyRequest().authenticated();
         http.addFilter(customAuthenticationFilter);
+        http.addFilterBefore(new CustomAuthorizationFilter(), UsernamePasswordAuthenticationFilter.class);
     }
 
     @Bean

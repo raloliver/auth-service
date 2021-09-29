@@ -2,7 +2,7 @@
  * File: CustomAuthenticationFilter.java
  * Project: filter
  * Created: Wednesday, September 22nd 2021, 6:40:05 am
- * Last Modified: Thursday, September 23rd 2021, 7:03:24 am
+ * Last Modified: Wednesday, September 29th 2021, 5:13:10 am
  * Copyright © 2021 AMDE Agência
  */
 
@@ -11,9 +11,7 @@ package com.raloliver.authservice.filter;
 import java.io.IOException;
 import java.util.Date;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
-import java.util.stream.Collector;
 import java.util.stream.Collectors;
 
 import javax.servlet.FilterChain;
